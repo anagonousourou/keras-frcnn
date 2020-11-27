@@ -83,7 +83,7 @@ else:
 
 train_imgs, classes_count, class_mapping = get_data(options.train_path)
 #val_imgs, _, _ = get_data(options.train_path)
-val_imgs=train_imgs
+#val_imgs=train_imgs
 
 if 'bg' not in classes_count:
 	classes_count['bg'] = 0
@@ -108,10 +108,10 @@ random.shuffle(train_imgs)
 num_imgs = len(train_imgs)
 
 #train_imgs = [s for s in all_imgs if s['imageset'] == 'trainval']
-val_imgs = [s for s in all_imgs if s['imageset'] == 'test']
+#val_imgs = [s for s in all_imgs if s['imageset'] == 'test']
 
 print(f'Num train samples {len(train_imgs)}')
-print(f'Num val samples {len(val_imgs)}')
+#print(f'Num val samples {len(val_imgs)}')
 
 
 data_gen_train = data_generators.get_anchor_gt(train_imgs, classes_count, C, nn.get_img_output_length, K.common.image_dim_ordering(), mode='train')
